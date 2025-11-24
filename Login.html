@@ -50,8 +50,17 @@
 	}
 
         label {
-		display:none;
-	      }
+			-webkit-box-align: center;
+			-webkit-align-items: center;
+			-ms-flex-align: center;
+			align-items: center;
+			color: #000;
+			font-size: 14px;
+			font-style: normal;
+			line-height: 140%;
+			height: 32px;
+			margin-bottom: 0;
+			text-align: left;
 
         #layer {
             position: absolute;
@@ -63,15 +72,20 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
+			background-color: #f5f4f4;
         }
 
         #logo {
-            height: 50px;
-            background-position: center;
+			position: absolute;
+			top: 0;
+            height: 150px;
+			width: 100%;
+            background-position: left;
             background-repeat: no-repeat;
             background-size: contain;
-            background-image: url("https://github.com/TRod-Dev/Puratos_EOP_Test/main/Puratos-Logo.png?raw=true");
-            margin-bottom: 20px;
+            background-image: url("https://trod-dev.github.io/Puratos_EOP_Test/Puratos-Logo.png");
+            background-color: white;
+			border-bottom: 1px solid #cfcfcf;
         }
 
        
@@ -83,7 +97,7 @@
             border-radius: 25px;
             border: 1px solid black;
             font-weight: bold;
-            text-align: center;
+            text-align: left;
         }
 
                #api {
@@ -91,7 +105,7 @@
             background: rgba(255, 255, 255, 0.8);
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: none;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -135,10 +149,6 @@
 
 	.entry-item{
 	display:grid;
-	}
-
-	.password-label{
-	order:1;
 	}
 
     </style>
