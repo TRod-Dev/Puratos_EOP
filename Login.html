@@ -195,13 +195,33 @@
 		color: #e31002;
 	}
 	
+	.azure-layout-container {
+		    background: #f5f4f4;
+			display: -ms-grid;
+			display: grid;
+			-ms-grid-columns: 60% 1fr;
+			grid-template-columns: 60% 1fr;
+			gap: 0 30px;
+			height: 100%;
+			width: 100%;
+			font-size: 16px;
+	}
+	
+	#registration {
+		width: 100%;
+		height: 20px;
+		background-color: green;
+	}
+	
     </style>
 </head>
 <body>
     <div id="layer">
         <div id="logo"></div>
-        <div id="api">
-        </div>
+		<div class="azure-layout-container">
+			<div id="api"></div>
+			<div id="registration"></div>
+		</div>
     </div>
 	<!-- <script src="https://cdn.jsdelivr.net/gh/TRod-Dev/Puratos_EOP_Test@main/customLayoutChanges.js" defer></script> -->
 	<script>
