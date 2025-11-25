@@ -191,5 +191,11 @@
         </div>
     </div>
 	<script src="https://trod-dev.github.io/Puratos_EOP_Test/customLayoutChanges.js"></script> 
+	<script>
+		document.addEventListener('invalid', function (e) {
+		  e.preventDefault();
+		  // Optionally, you can show your own custom error UI here
+		}, true);
+	</script>
 </body>
 </html>
