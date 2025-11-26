@@ -125,11 +125,36 @@ document.addEventListener('DOMContentLoaded', () => {
 /**
  * Invalidate the form validate (tooltip)
  */
-document.addEventListener('DOMContentLoaded', function() {
-	const forms = document.querySelectorAll('form');
-	forms.forEach(form => {
-		form.noValidate = true;
-	});
-	console.log('Forms found:', forms);
-});
+(function() {
+  function disableValidation(form) {
+    if (!form.hasAttribute('novalidate')) {
+      form.setAttribute('novalidate', 'true');
+      console.log('Disabled validation on form:', form);
+    }
+  }
+
+  // Wait for DOM ready
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = document.querySelector('form');
+    if (form) disableValidation(form);
+  });
+
+  // Also catch any future added forms (rare, but just in case)
+  const observer = new MutationObserver(mutations => {
+    for (let m of mutations) {
+      m.addedNodes.forEach(node => {
+        if (node.nodeType === 1) {
+          if (node.tagName === 'FORM') {
+            disableValidation(node);
+          } else {
+            node.querySelectorAll('form').forEach(disableValidation);
+          }
+        }
+      });
+    }
+  });
+
+  observer.observe(document.body, { childList: true, subtree: true });
+})();
+
 
