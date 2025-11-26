@@ -157,11 +157,3 @@ document.addEventListener('DOMContentLoaded', () => {
   observer.observe(document.body, { childList: true, subtree: true });
 })();
  */
-
-/**
- * Substitute header text
- */
- document.addEventListener('DOMContentLoaded', () => {
-  const heading = document.querySelector('.intro h2');
-  if (heading) heading.textContent = 'Sign in with your existing account';
-});
