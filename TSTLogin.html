@@ -1,0 +1,292 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Easy Order Portal Login Page</title>
+    <style> 
+
+	@font-face {
+	    font-family: 'Sansa';
+	    src: url("https://raw.githubusercontent.com/TRod-Dev/Puratos_EOP_Test/main/Sansa.ttf") format("truetype");
+	    font-weight: normal;
+	    font-style: normal;
+	}
+	
+	@font-face {
+	    font-family: 'Century Gothic';
+	    src: url("https://raw.githubusercontent.com/TRod-Dev/Puratos_EOP_Test/main/centurygothic.ttf") format("truetype");
+	    font-weight: normal;
+	    font-style: normal;
+	}
+	
+	@font-face {
+	    font-family: 'Karmina';
+	    src: url("https://raw.githubusercontent.com/TRod-Dev/Puratos_EOP_Test/main/Karmina%20Regular.otf") format("opentype");
+	    font-weight: normal;
+	    font-style: normal;
+	}
+
+	/* Fallback fonts (Remove if custom fonts are hosted correctly) */
+	body, html {
+		font-family: 'Century Gothic','Sansa','Karmina';
+	}
+
+	h1 {
+		font-size: 20px;
+	}
+
+	body {
+	    max-width: 100%;
+	    margin: auto;
+	    text-align: center;
+	    background-image: none;
+		background-color: white;
+	    color: black;
+	    height: fit-content;
+	    height: 100%;
+	    background-position: center;
+	    background-repeat: no-repeat;
+	    background-size: cover;
+	}
+
+	label, .password-label {
+		-webkit-box-align: center;
+		-webkit-align-items: center;
+		-ms-flex-align: center;
+		align-items: center;
+		color: #000;
+		font-size: 14px;
+		font-style: normal;
+		line-height: 140%;
+		height: 32px;
+		margin-bottom: -18px;
+		text-align: left;
+	}
+
+	#layer {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		background-color: #f5f4f4;
+	}
+
+	#logo {
+		position: absolute;
+		top: 0;
+		height: 150px;
+		width: 100%;
+		background-position: left;
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-image: url("https://trod-dev.github.io/Puratos_EOP_Test/Puratos-Logo.png");
+		background-color: white;
+		border-bottom: 1px solid #cfcfcf;
+	}
+
+	input {
+		width: 95%;
+		padding: 10px;
+		margin: 10px 0;
+		border-radius: 25px;
+		border: 1px solid black;
+		font-weight: bold;
+		text-align: left;
+	}
+
+	#api {
+		background: rgba(255, 255, 255, 0.8);
+		padding: 60px 30px;
+		border-radius: 10px;
+		box-shadow: none;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-self: end;
+		width: 60%;
+	}
+        
+	#forgotPassword {
+		margin-top: 10px;
+	    text-align: center;
+	    font-weight: bold;
+	    color: rgb(209, 0, 52);
+	}
+
+	#next {
+		padding: 10px;
+		width: 100%;
+		color: white;
+		font-weight: bold;
+		background-color: rgb(209, 0, 52);
+		margin-top: 10px;
+		border-radius: 25px;
+		border: none;
+		cursor: pointer;
+	}
+
+	@media only screen and (max-height: 400px) {
+		#logo {
+			display: none;
+		}
+	}
+
+	.divider h2 {
+		display:none;
+	}
+	
+	.create {
+		display:none;
+	}
+
+	.entry{
+		display:grid;
+	}
+	
+	.entry-item .password-label {
+		display: contents;
+	}
+
+	.entry-item{
+		display: flex;
+		flex-direction: column;
+	}
+	
+	.error.itemLevel {
+		order: 3;
+	}
+	
+	.entry-item .password-label {
+		order: 1;
+	}
+	
+	.entry-item input[type="password"] {
+		order: 2;
+	}
+	
+	.entry-item #forgotPassword {
+	  order: 4;
+	}
+	
+	.entry .entry-item .error.itemLevel p{
+		display: none;
+		/*margin: 0;
+		color: #e31002;
+		font-size: 12px;
+		font-style: normal;
+		font-weight: 600;
+		line-height: 16px;
+		text-align: left;
+		margin-bottom: 10px;*/
+	}
+	
+	.heading {
+		display:none;
+	}
+	
+	.highlightError {
+		border: 1px solid #e31002;
+		background: rgba(227, 16, 2, .05);
+		color: #e31002;
+	}
+	
+	.azure-layout-container {
+		display: -ms-grid;
+		display: grid;
+		-ms-grid-columns: 50% 1fr;
+		grid-template-columns: 55% 1fr;
+		gap: 0 50px;
+		height: calc(100% - 151px);
+		margin-top: 151px;
+		width: 100%;
+		font-size: 16px;
+		align-content: center;
+		justify-items: center;
+	}
+	
+	#registration {
+		width: 100%;
+		height: 100%;
+	}
+	
+	.localAccount .intro {
+		margin-bottom: 32px;
+	}
+	
+	h2 {
+		font-size: 32px;
+		font-style: normal;
+		font-weight: 700;
+		line-height: 34px;
+		margin: 0;
+		text-transform: none;
+	}
+	
+	h3 {
+		font-size: 16px;
+		font-style: normal;
+		font-weight: 700;
+		color: #000;
+		line-height: 22px;
+		margin-top: 0;
+	}
+	
+	#registration-title{
+		margin-bottom: 20px;
+	}
+	
+	#registration-content{
+		width: fit-content;
+	}
+	
+	#registration-content button{
+		padding: 12px 30px;
+		border-radius: 30px;
+		/*font-size: 16px;*/
+		font-style: normal;
+		font-weight: 700;
+		line-height: 150%;
+		-webkit-transition: .4s all ease-in-out;
+		transition: .4s all ease-in-out;
+		text-align: center;
+		background: #fff;
+		color: #000;
+		border: 1px solid #cc092f;
+		width: 100%;
+		cursor: pointer;
+	}
+	
+	form {
+		width: 100%;
+	}
+	
+	.error.pageLevel p {
+		color: #e31002;
+	}
+	
+    </style>
+</head>
+<body>
+    <div id="layer">
+        <div id="logo"></div>
+		<div class="azure-layout-container">
+			<div id="api"></div>
+			<div id="registration">
+				<div id="registration-content">
+					<div id="registration-title">
+						<h3>I am a Puratos customer but I don't have an account</h3>
+					</div>
+					<a href="https://connect-tst.puratos.com/EasyOrderPortal/Registration">
+						<button>CREATE ACCOUNT</button>
+					</a>
+				</div>
+			</div>
+		</div>
+    </div>
+	<script src="https://trod-dev.github.io/Puratos_EOP_Test/customLayoutChanges.js" defer></script>
+</body>
+</html>
